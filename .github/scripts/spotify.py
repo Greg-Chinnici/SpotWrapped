@@ -2,6 +2,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import json
 import os
+import requests
+import base64
 
 SPOTIPY_CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
 SPOTIPY_CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
@@ -19,38 +21,52 @@ def clean_list(list):
     s = ', '.join([item['name'] for item in list])
     return s
 
-def get_recently_played():
-    try:
-        results = sp.current_user_recently_played(limit=3)
-        if results['items']:
-            tracks = []
-            for item in results['items']:
-                track = item['track']
-                track_info = {
-                    'name' : track['name'],
-                    'artists' : clean_list(track['artists']),
-                    'link' : track['external_urls']['spotify'],
-                    'album_image' : track['album']['images'][0]['url']
-                }
-                tracks.append(track_info)
-            print(tracks)
-            return tracks
-        else:
-            print("No recently played tracks found.")
-            return []
-    except Exception as e:
-        print(f"Error fetching recently played tracks: {e}")
-        return [] 
+CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
+CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
 
-def write_to_file(tracks):
-    try:
-        if tracks == []: return
+def get_access_token():
+    auth_string = f"{CLIENT_ID}:{CLIENT_SECRET}"
+    auth_bytes = auth_string.encode("utf-8")
+    auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
-        with open('../../recent_tracks.json', 'w') as f:
-            json.dump(tracks, f)
-            print("File written successfully")
-    except Exception as e:
-        print(f"Error replacing file: {e}")
+    url = "https://accounts.spotify.com/api/token"
+    headers = {
+        "Authorization": f"Basic {auth_base64}",
+        "Content-Type": "application/x-www-form-urlencoded",
+    }
+    data = {"grant_type": "client_credentials"}
+    result = requests.post(url, headers=headers, data=data)
+    json_result = json.loads(result.content)
+    token = json_result.get("access_token")
+    return token
 
-t = get_recently_played()
-write_to_file(t)
+def get_recently_played(token):
+    url = "https://api.spotify.com/v1/me/player/recently-played?limit=3"
+    headers = {"Authorization": f"Bearer {token}"}
+    result = requests.get(url, headers=headers)
+    return json.loads(result.content)
+
+def update_recent_tracks_file(tracks):
+    if (tracks == []):
+        return
+    with open("../../recent_tracks.json", "w") as f:
+        json.dump(tracks, f, indent=4)
+
+if __name__ == "__main__":
+    access_token = get_access_token()
+    recently_played = get_recently_played(access_token)
+    tracks = []
+    if recently_played and 'items' in recently_played:
+        for item in recently_played['items']:
+            track = item['track']
+            track = {
+                "name": track['name'],
+                "artists": clean_list(track['artists']),
+                "album": item['track']['album']['name'],
+                "album_image": track['album']['images'][0]['url'],
+                "link": track['external_urls']['spotify'],
+            }
+            tracks.append(track)
+        update_recent_tracks_file(tracks)
+    else:
+        print("Could not retrieve recently played tracks")
