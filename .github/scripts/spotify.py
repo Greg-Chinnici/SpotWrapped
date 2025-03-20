@@ -18,6 +18,10 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                redirect_uri=SPOTIPY_REDIRECT_URI,
                                                scope=scope))
 
+def clean_list(list):
+    s = ', '.join([item['name'] for item in list])
+    return s
+
 def get_recently_played():
     try:
         results = sp.current_user_recently_played(limit=3)
@@ -27,7 +31,7 @@ def get_recently_played():
                 track = item['track']
                 track_info = {
                     'name' : track['name'],
-                    'artists' : [a['name'] for a in track['artists']],
+                    'artists' : clean_list(track['artists']),
                     'link' : track['external_urls']['spotify'],
                     'album_image' : track['album']['images'][0]['url']
                 }
@@ -41,4 +45,15 @@ def get_recently_played():
         print(f"Error fetching recently played tracks: {e}")
         return [] 
 
-get_recently_played()
+def write_to_file(tracks):
+    try:
+        if tracks == []: return
+
+        with open('../../recent_tracks.json', 'w') as f:
+            json.dump(tracks, f)
+            print("File written successfully")
+    except Exception as e:
+        print(f"Error replacing file: {e}")
+
+t = get_recently_played()
+write_to_file(t)

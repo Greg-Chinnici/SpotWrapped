@@ -34,6 +34,10 @@
                </table>
             </div>
         </section>
+        <section >
+            <h2>Recent Tracks</h2>
+            <div id="recent-tracks"></div>
+        </section>
         <section id="top-artists">
             <h2>Top Artists</h2>
             <img src="Assets/top_10_artists.png" alt="Top 10 Artists">
@@ -61,5 +65,10 @@
         <p>footer</p>
     </footer>
     <script src="scripts.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            load_recent_songs();
+        });
+    </script>
 </body>
 </html>
