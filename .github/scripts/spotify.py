@@ -1,4 +1,3 @@
-import spotipy
 import json
 import os
 import base64
@@ -29,7 +28,7 @@ def get_recently_played(token):
     return json.loads(result.content)
 
 def update_recent_tracks_file(tracks):
-    with open("recent_tracks.json", "w") as f:
+    with open("/../../recent_tracks.json", "w") as f:
         json.dump(tracks, f, indent=4)
 
 if __name__ == "__main__":
