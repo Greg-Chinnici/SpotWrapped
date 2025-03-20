@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Wrapped Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Spotify Wrapped Dashboard</h1>
+    </header>
+    <main>
+        <section id="basic-info">
+            <h2>By The Numbers</h2>
+            <ul>
+                <li>Number of unique songs listened to: <span id="num-songs">10048</span></li>
+                <li>Number of unique artists listened to: <span id="num-artists">2936</span></li>
+                <li>Number of hours listened to: <span id="num-hours">1734.70</span></li>
+                <li>Time Frame: <span id="time-frame">2019-09-19 to 2025-03-15</span></li>
+            </ul>
+            <div>
+                <div>Skip Rate: <span id="skip-rate">48.78%</span></div>
+                <div>Shuffle Rate: <span id="skip-rate">55.26%</span></div>
+            </div>
+            <h3>Listening By Platforms</h3>
+            <div>
+               <table>
+                    <tr><th>IOS</th><th id="platform-number">40056</th></tr>
+                    <tr><th>Windows 11</th> <th id="platform-number">14942</th></tr>
+                    <tr><th>MacOS</th><th id="platform-number">12191</th></tr>
+                    <tr><th>Windows 10</th> <th id="platform-number">10048</th></tr>
+                    <tr><th>Xbox One</th> <th id="platform-number">8288</th></tr>
+               </table>
+            </div>
+        </section>
+        <section id="top-artists">
+            <h2>Top Artists</h2>
+            <img src="Assets/top_10_artists.png" alt="Top 10 Artists">
+        </section>
+        <section id="top-songs">
+            <h2>Top Songs</h2>
+            <img src="Assets/top_10_tracks.png" alt="Top 10 Songs by total time">
+            <img src="Assets/top_10_tracks_play_count.png" alt="Top 10 Songs by playcount">
+        </section>
+        <section>
+            <h2> My Schedule</h2>
+                <div flex-container>
+                    <img src="Assets/listening_by_hour.png" alt="hourly by day listening">
+                    <img src="Assets/listening_by_day.png" alt="day of the week listening">
+                    <img src="Assets/yearly_listening_comparison.png" alt="total listening by year">
+                </div>
+        </section>
+        <section id="other">
+            <h2>Binge Listening</h2>
+            <img src="Assets/top_binge_artists.png" alt="Binge Listening">
+            <img src="Assets/binge_length_distribution.png" alt="Binge Listening 2">
+        </section>
+    </main>
+    <footer>
+        <p>footer</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+Processing data for 2019
+artist_name
+Lil Yachty      420.006733
+Lil Tecca       377.591000
+DaBaby          355.908083
+Lil Uzi Vert    297.308350
+Young Thug      280.124033
+track_name
+223's (feat. 9lokknine)                                                      95.677183
+F.N                                                                          93.535150
+Baguettes in the Face (feat. NAV, Playboi Carti & A Boogie Wit da Hoodie)    89.931967
+Money In The Grave (Drake ft. Rick Ross)                                     87.672000
+Camelot                                                                      78.944350
+Time per month: month
+8     2108.559233
+9     2398.154200
+10    1914.947617
+11     737.150950
+12      38.683150
+Year time: 7197.49515
+Processing data for 2020
+artist_name
+Lil Uzi Vert    2528.250567
+Polo G          1440.646417
+Lil Wayne       1074.183350
+Tee Grizzley    1024.822300
+Lil Tecca        932.642133
+track_name
+Myron                      158.858433
+P2                         156.710017
+First Day Out              134.351950
+BOP                        110.948033
+Flex (feat. Juice WRLD)    109.809133
+Time per month: month
+1      301.950000
+2      498.544833
+3      662.693517
+4      429.113817
+5     1474.157750
+6      922.363000
+7     1756.196033
+8     2018.432633
+9     2632.444600
+10    1118.398900
+11    4388.303483
+12    3019.065283
+Year time: 19221.663849999997
+Processing data for 2021
+artist_name
+Shoreline Mafia    1955.413333
+Lil Uzi Vert       1098.179600
+Polo G             1088.503033
+Lil Yachty          955.368317
+Tee Grizzley        600.472883
+track_name
+Bands (feat. OhGeesy, Fenix Flexin & Master Kato)     177.621683
+Hold On / Musty Freestyle (feat. Drakeo the Ruler)    130.352117
+6 Foot 7 Foot                                         129.257500
+熱情のスペクトラム                                             125.293117
+21                                                    116.382567
+Time per month: month
+1     2215.601550
+2     1858.924600
+3     1660.309383
+4      803.102550
+5     1564.356817
+6     1401.150433
+7     1478.145533
+8      780.952550
+9      861.462733
+10    1687.538800
+11    1455.347517
+12    1770.534517
+Year time: 17537.42698333333
+Processing data for 2022
+artist_name
+Juice WRLD         314.688033
+Shoreline Mafia    261.619100
+Lil Yachty         201.410217
+Pop Smoke          186.607917
+Sleepy Hallow      174.836617
+track_name
+Run It Up (feat. Offset & Moneybagg Yo)                    68.931217
+Bad Boy (with Young Thug)                                  66.357150
+3 Headed Goat (feat. Lil Baby & Polo G)                    66.085467
+SUVs (Black on Black)                                      65.995817
+Pardon Me (Lil Yachty feat. Future & Mike WiLL Made-It)    62.049600
+Time per month: month
+1     965.460433
+2    1114.022267
+3    1406.082067
+4     681.813650
+5     620.808550
+6     285.641867
+7     102.423650
+8      48.396983
+9       1.164667
+Year time: 5225.814133333333
+Processing data for 2023
+artist_name
+Shoreline Mafia    497.329033
+Lil Uzi Vert       495.402583
+Playboi Carti      427.809400
+Eminem             397.562100
+Yeat               330.538067
+track_name
+My wrist (with Young Thug)    86.669900
+Rap God                       75.481717
+City of Gods                  74.126567
+Off The Grid                  73.476583
+Neva Cared                    68.772533
+Time per month: month
+1        1.931333
+6        0.030050
+9        0.274833
+11     973.813233
+12    4166.649050
+Year time: 5142.6985
+Processing data for 2024
+artist_name
+Playboi Carti      3516.602600
+Lil Uzi Vert       2737.298950
+Yeat               2506.285467
+Shoreline Mafia    2137.797083
+XXXTENTACION       2119.904617
+track_name
+Shoota (feat. Lil Uzi Vert)    400.950550
+Stop Breathing                 347.194333
+wokeuplikethis*                346.416050
+Breathe                        266.463350
+Rap God                        264.567017
+Time per month: month
+1     3587.994883
+2     3991.422633
+3     4987.199133
+4     4621.350100
+5     3849.549033
+6     2590.616317
+7     1843.420883
+8     3152.415983
+9     4352.245467
+10    3650.152217
+11    3489.326417
+12    3256.772983
+Year time: 43372.466049999995
+Processing data for 2025
+artist_name
+Playboi Carti    334.276817
+Sheck Wes        309.326183
+Lil Yachty       264.142783
+Lil Uzi Vert     245.093317
+Yeat             239.246433
+track_name
+F*CK SWAG    90.752233
+YKTS         79.543300
+Shut Up      55.971533
+LFG!         52.493567
+Yes Sir      48.833967
+Time per month: month
+1    2504.251217
+2    2789.458083
+3    1090.988567
+Year time: 6384.697866666666
