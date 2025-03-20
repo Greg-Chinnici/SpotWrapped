@@ -1,6 +1,12 @@
 name: Update Spotify Recent Tracks
 
 on:
+  push:
+    branches:
+      - master # or main
+  pull_request:
+    branches:
+      - master # or main
   schedule:
     - cron: '*/10 8-16 * * *' # Runs every 10 minutes from 8 AM to 4:50 PM
 
