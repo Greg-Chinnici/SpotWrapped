@@ -1,25 +1,7 @@
 import spotipy
-from spotipy.oauth2 import SpotifyOAuth
 import json
 import os
-import requests
 import base64
-
-SPOTIPY_CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
-SPOTIPY_CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
-SPOTIPY_REDIRECT_URI = os.environ.get("SPOTIPY_REDIRECT_URI")
-#! https://api.spotify.com/v1/me/player/currently-playing
-
-scope = 'user-read-recently-played'
-
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
-                                               client_secret=SPOTIPY_CLIENT_SECRET,
-                                               redirect_uri=SPOTIPY_REDIRECT_URI,
-                                               scope=scope))
-
-def clean_list(list):
-    s = ', '.join([item['name'] for item in list])
-    return s
 
 CLIENT_ID = os.environ.get("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.environ.get("SPOTIPY_CLIENT_SECRET")
@@ -47,12 +29,11 @@ def get_recently_played(token):
     return json.loads(result.content)
 
 def update_recent_tracks_file(tracks):
-    if (tracks == []):
-        return
-    with open("../../recent_tracks.json", "w") as f:
+    with open("recent_tracks.json", "w") as f:
         json.dump(tracks, f, indent=4)
 
 if __name__ == "__main__":
+    import requests
     access_token = get_access_token()
     recently_played = get_recently_played(access_token)
     tracks = []
